@@ -73,7 +73,7 @@ export default function ContactForm() {
                 ></textarea>
                 {formState.isValid.message && <p className="form-error-message">Must be at least 10 characters long</p>}
 
-                <button type="submit" className="primary" popovertarget="formButton">
+                <button type="submit" className="primary">
                     Send besked
                     <DecoratorPrimary />
                 </button>
