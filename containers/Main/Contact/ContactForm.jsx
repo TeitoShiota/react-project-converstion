@@ -23,9 +23,11 @@ export default function ContactForm() {
 
         if (formValidator(formState)) {
             setFormState({...formState, isValid: true})
-            console.log("Form is valid. Sending data to server.");
+            alert("Form is valid. Sending data to server.");
         } else {
+            alert("Form is invalid. Please check your inputs.");
             setFormState({...formState, isValid: false})
+            return;
         }
 
         console.log(formState);
@@ -44,7 +46,7 @@ export default function ContactForm() {
     };
 
     return (
-        <form noValidate>
+        <form noValidate onSubmit={handleSubmit}>
                 <input placeholder="Navn" name="name" type="text" value={formState.name} onChange={handleChange} />
                 <input placeholder="Email" name="email" type="email" value={formState.email} onChange={handleChange} />
                 
@@ -58,9 +60,9 @@ export default function ContactForm() {
                     onChange={handleChange}
                 ></textarea>
 
-                {!formState.isValid && <p>Form is invalid. Please check your inputs.</p>}
+                {/* {!formState.isValid && <p>Form is invalid. Please check your inputs.</p>} */}
 
-                <button type="submit" className="primary" onClick={handleSubmit}>
+                <button type="submit" className="primary">
                     Send besked
                     <DecoratorPrimary />
                 </button>
