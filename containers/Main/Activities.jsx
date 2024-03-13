@@ -1,3 +1,5 @@
+import DecoratorPrimary from "@/components/DecoratorPrimary";
+
 import Gallery from '@/containers/Main/Activities/Gallery';
 
 export default function Activities() {
@@ -13,7 +15,9 @@ export default function Activities() {
                     bånd i naturen. Fra børnevenlige stier til udfordrende ruter - oplev
                     sammen i Karlstrup Klatrepark!
                 </p>
-                <a href="#" className="link primary"> Vores aktiviteter </a>
+                <a href="#" className="link primary"> Vores aktiviteter 
+                    <DecoratorPrimary />
+                </a>
             </section>
         </div>
     );

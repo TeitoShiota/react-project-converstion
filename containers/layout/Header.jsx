@@ -1,3 +1,5 @@
+import DecoratorPrimary from "@/components/DecoratorPrimary";
+
 export default function Header() {
     return (
         <header className="light mirrored" id="hjem">
@@ -8,7 +10,9 @@ export default function Header() {
                     Klatring er en fritidsbeskæftigelse som kan samle hele familien. Et
                     aktivt liv begynder i Karlstrup Klatrepark.
                 </p>
-                <a href="#" className="link primary"> Læs mere</a>
+                <a href="#" className="link primary"> Læs mere 
+                    <DecoratorPrimary />
+                </a>
             </div>
         </header>
     );

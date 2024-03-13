@@ -1,9 +1,12 @@
+import DecoratorPrimary from "@/components/DecoratorPrimary";
+import NextImg from "@/components/NextImg";
+
 export default function Advert() {
     return (
-        <section className="advert" className="page-section">
+        <section className="advert page-section">
             <div className="filter-whole advert-wrapper">
                 <div className="advert-content">
-                    <img src="/images/andreas.jpg" alt="Klatre instruktøren Andreas" />
+                    <NextImg src="/images/andreas.jpg" alt="Klatre instruktøren Andreas" />
                     <div className="advert-text-container">
                         <h1>Tirsdags-klatring med Andreas</h1>
                         <p className="body-1">
@@ -13,7 +16,9 @@ export default function Advert() {
                             får pulsen op og snakker om det nyeste klatre-gear.
                         </p>
                         <p>Tirsdage kl. 17.30 - 19.30</p>
-                        <a href="#" className="link primary"> Tilmeld dig her </a>
+                        <a href="#" className="link primary"> Tilmeld dig her 
+                            <DecoratorPrimary />
+                        </a>
                     </div>
                 </div>
                 <hr className="colored-line" />

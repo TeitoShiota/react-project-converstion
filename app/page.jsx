@@ -10,6 +10,6 @@ export default function Home() {
       <Trial />
       <Advert />
       <Contact />
-    </main>
+    </main> 
   );
 }

@@ -1,3 +1,6 @@
+import DecoratorPrimary from "@/components/DecoratorPrimary";
+import NextImg from "@/components/NextImg";
+
 export default function Trial() {
     return (
         <section id="prøv" className="page-section triple-container">
@@ -10,10 +13,7 @@ export default function Trial() {
             </p>
             <div className="article-container">
                 <article>
-                    <img
-                    src="images/family.jpg"
-                    alt="En familie der klatrer på en klatrevæg"
-                    />
+                    <NextImg src="/images/family.jpg" alt="En person der klatrer for første gang" />
                     <h3>Familie-klatring</h3>
                     <p className="body-1">
                     En sjov dag med klatre-aktiviteter for hele familien. I kan frit
@@ -21,20 +21,24 @@ export default function Trial() {
                     legeområdet, mens far og mor kravler mod toppen på den store
                     klatrevæg.
                     </p>
-                    <a href="#" className="link primary"> Bestil </a>
+                    <a href="#" className="link primary"> Bestil
+                        <DecoratorPrimary />
+                    </a>
                 </article>
                 <article>
-                    <img src="images/junior.jpg" alt="" />
+                    <NextImg src="/images/junior.jpg" alt="" />
                     <h3>Junior-klatring</h3>
                     <p className="body-1">
                     Vores juniorklatrepakke er beregnet på mindre grupper og I får i
                     gruppen stillet en klatreinstruktør til rådighed i 45 minutter.
                     Herefter kan I klatre i parken i to timer på egen hånd.
                     </p>
-                    <a href="#" className="link primary"> Bestil </a>
+                    <a href="#" className="link primary"> Bestil
+                        <DecoratorPrimary />
+                    </a>
                 </article>
                 <article>
-                    <img src="images/children.jpg" alt="" />
+                    <NextImg src="/images/children.jpg" alt="Børn der klatrer" />
                     <h3>Børne-klatring</h3>
                     <p className="body-1">
                     Er du klar på at holde en festlig børnefødselsdag i Karlstrup
@@ -42,7 +46,9 @@ export default function Trial() {
                     og legeområde i tre timer samt en plads i café-området til far og
                     mor.
                     </p>
-                    <a href="#" className="link primary"> Bestil </a>
+                    <a href="#" className="link primary"> Bestil 
+                        <DecoratorPrimary />
+                    </a>
                 </article>
             </div>
         </section>

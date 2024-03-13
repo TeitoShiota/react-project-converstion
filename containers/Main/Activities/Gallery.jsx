@@ -1,3 +1,5 @@
+import NextImg from "@/components/NextImg";
+
 export default function Gallery() {
 
     // let mainImage = document.querySelector(".main-image img");
@@ -16,17 +18,17 @@ export default function Gallery() {
     return (
         <div className="gallery">
                 <div className="main-image">
-                    <img src="images/gallery-1.jpg" alt="" />
+                    <NextImg src="/images/gallery-1.jpg" alt="" />
                 </div>
                 <div className="image-array-container">
                     <div className="image-container">
-                        <img className="selected" src="/images/gallery-1.jpg" alt="" />
+                        <NextImg className="selected" src="/images/gallery-1.jpg" alt="" />
                     </div>
                     <div className="image-container">
-                        <img src="/images/gallery-2.jpg" alt="" />
+                        <NextImg src="/images/gallery-2.jpg" alt="" />
                     </div>
                     <div className="image-container">
-                        <img src="/images/gallery-3.jpg" alt="" />
+                        <NextImg src="/images/gallery-3.jpg" alt="" />
                     </div>
                 </div>
             </div>
