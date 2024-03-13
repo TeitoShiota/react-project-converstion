@@ -33,7 +33,6 @@ export default function Gallery() {
                                     src={image}
                                     alt=""
                                     className={ selected == index && "selected" || "" }
-                                    
                                 />
                             </div>
                         );
