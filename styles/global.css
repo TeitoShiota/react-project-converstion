@@ -134,7 +134,7 @@ button,
 
 header {
   height: 90vh;
-  background-image: url(images/hero.jpg);
+  background-image: url(/images/hero.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -149,6 +149,7 @@ header {
   padding: 5em;
   & button {
     width: fit-content;
+    width: -moz-fit-content;
   }
   & .text-display {
     width: 30%;
