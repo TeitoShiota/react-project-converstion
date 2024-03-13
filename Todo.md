@@ -1,2 +1,2 @@
-- change all 'class' to 'className'
-- Convert all query selectors to native integrations
+- change all 'class' to 'className' / DONE
+- Convert all query selectors to native integrations / DONE
