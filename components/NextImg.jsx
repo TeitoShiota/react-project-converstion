@@ -21,6 +21,6 @@ export default function NextImg({ src, alt, width = 500, height = 500, className
             width={width}
             height={height}
             className={className}
-            />
+        />
     );
 }

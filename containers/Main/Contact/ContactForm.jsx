@@ -8,7 +8,11 @@ import DecoratorPrimary from "@/components/DecoratorPrimary";
 
 export default function ContactForm() {
     const [formState, setFormState] = useState({
-        isValid: true,
+        isValid: {
+            name: false,
+            email: false,
+            message: false,
+        },
         name: "",
         email: "",
         message: "",
@@ -21,16 +25,19 @@ export default function ContactForm() {
     async function handleSubmit(event) {
         event.preventDefault();
 
-        if (formValidator(formState)) {
-            setFormState({...formState, isValid: true})
-            alert("Form is valid. Sending data to server.");
-        } else {
-            alert("Form is invalid. Please check your inputs.");
-            setFormState({...formState, isValid: false})
+
+        const errors = {
+            name: formState.name.length < 2,
+            email: RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/).test(formState.email) === false,
+            message: formState.message.length < 10,
+        };
+
+        if (errors.name || errors.email || errors.message) {
+            setFormState({...formState, isValid: {...errors}});
+            console.log(formState);
             return;
         }
 
-        console.log(formState);
     }
 
     function formValidator(formState) {
@@ -47,9 +54,14 @@ export default function ContactForm() {
 
     return (
         <form noValidate onSubmit={handleSubmit}>
-                <input placeholder="Navn" name="name" type="text" value={formState.name} onChange={handleChange} />
-                <input placeholder="Email" name="email" type="email" value={formState.email} onChange={handleChange} />
+                <input placeholder="Navn" name="name" type="text" value={formState.name} onChange={handleChange}  />
+                {formState.isValid.name && <p className="form-error-message">Not a valid name.</p>}
                 
+
+                <input placeholder="Email" name="email" type="email" value={formState.email} onChange={handleChange} />
+                {formState.isValid.email && <p className="form-error-message">Not a valid email.</p>}
+
+
                 <textarea
                     placeholder="Besked"
                     name="message"
@@ -59,10 +71,9 @@ export default function ContactForm() {
                     value={formState.message}
                     onChange={handleChange}
                 ></textarea>
+                {formState.isValid.message && <p className="form-error-message">Must be at least 10 characters long</p>}
 
-                {/* {!formState.isValid && <p>Form is invalid. Please check your inputs.</p>} */}
-
-                <button type="submit" className="primary">
+                <button type="submit" className="primary" popovertarget="formButton">
                     Send besked
                     <DecoratorPrimary />
                 </button>
