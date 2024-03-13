@@ -1,7 +1,7 @@
 export default function Nav() {
     return (
-        <nav id="top-nav" class="bg-dark light">
-            <p class="titel">Karlstrup Klatrepark</p>
+        <nav id="top-nav" className="bg-dark light">
+            <p className="titel">Karlstrup Klatrepark</p>
             <ul>
                 <li><a href="#hjem">Hjem</a></li>
                 <li><a href="#aktiviteter">Aktiviteter</a></li>

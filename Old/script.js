@@ -10,67 +10,6 @@ function handleClick(event) {
   event.target.classList.add("selected");
 }
 
-const form = document.querySelector("form");
-form.addEventListener("submit", handleSubmit);
-
-function handleSubmit(event) {
-  event.preventDefault();
-  const inputs = [
-    ...event.target.querySelectorAll("input"),
-    event.target.querySelector("textarea"),
-  ];
-  inputs.forEach((element) =>
-    //   console.log(element)
-    validate[element.name](element)
-  );
-}
-
-const validate = {
-  name: function (element) {
-    if (element.value !== "") {
-      element.classList.remove("input-error");
-      element.nextElementSibling.classList.remove("error-message-show");
-      element.nextElementSibling.innerText = "";
-      return true;
-    } else {
-      element.classList.add("input-error");
-      element.nextElementSibling.classList.add("error-message-show");
-      element.nextElementSibling.innerText =
-        "Feltet er tomt, skriv dit navn her.";
-    }
-  },
-  email: function (element) {
-    if (element.value === "") {
-      element.classList.add("input-error");
-      element.nextElementSibling.classList.add("error-message-show");
-      element.nextElementSibling.innerText =
-        "Feltet er tomt, skriv din e-mail her.";
-    } else if (!element.value.includes("@") && !element.value.includes(".")) {
-      element.classList.add("input-error");
-      element.nextElementSibling.classList.add("error-message-show");
-      element.nextElementSibling.innerText =
-        "Dette er ikke en gyldig e-mail adresse, kontroller venligst igen.";
-    } else {
-      element.classList.remove("input-error");
-      element.nextElementSibling.classList.remove("error-message-show");
-      element.nextElementSibling.innerText = "";
-      return true;
-    }
-  },
-  message: function (element) {
-    if (element.value !== "") {
-      element.classList.remove("input-error");
-      element.nextElementSibling.classList.remove("error-message-show");
-      element.nextElementSibling.innerText = "";
-      return true;
-    } else {
-      element.classList.add("input-error");
-      element.nextElementSibling.classList.add("error-message-show");
-      element.nextElementSibling.innerText =
-        "Feltet er tomt, husk at skrive en besked til os.";
-    }
-  },
-};
 
 document.querySelectorAll(".primary").forEach(
   (element) =>
