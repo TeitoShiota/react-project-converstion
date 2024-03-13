@@ -1,35 +1,43 @@
+'use client';
+
 import NextImg from "@/components/NextImg";
+import { useState } from "react";
 
 export default function Gallery() {
 
-    // let mainImage = document.querySelector(".main-image img");
-    // let imageArray = document
-    //     .querySelector(".image-array-container")
-    //     .querySelectorAll("img");
-    // imageArray.forEach((element) => element.addEventListener("click", handleClick));
+    const [selected, setSelected ] = useState(0); // 0 is the default value
 
-
-    function handleClick(event) {
-        mainImage.src = event.target.src;
-        imageArray.forEach((element) => element.classList.remove("selected"));
-        event.target.classList.add("selected");
+    function handleClick(index) {    
+        setSelected(index);
     }
+
+    const galleryImages = [
+        "/images/gallery-1.jpg",
+        "/images/gallery-2.jpg",
+        "/images/gallery-3.jpg",
+    ];
+
+
 
     return (
         <div className="gallery">
                 <div className="main-image">
-                    <NextImg src="/images/gallery-1.jpg" alt="" />
+                    <NextImg src={galleryImages[selected]} alt="" />
                 </div>
+
                 <div className="image-array-container">
-                    <div className="image-container">
-                        <NextImg className="selected" src="/images/gallery-1.jpg" alt="" />
-                    </div>
-                    <div className="image-container">
-                        <NextImg src="/images/gallery-2.jpg" alt="" />
-                    </div>
-                    <div className="image-container">
-                        <NextImg src="/images/gallery-3.jpg" alt="" />
-                    </div>
+                    {galleryImages.map((image, index) => {
+                        return (
+                            <div className="image-container" key={index} onClick={ () => handleClick(index)}>
+                                <NextImg 
+                                    src={image}
+                                    alt=""
+                                    className={ selected == index && "selected" || "" }
+                                    
+                                />
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
     );

@@ -70,7 +70,7 @@ export default function ContactForm() {
     };
 
     return (
-        <form novalidate>
+        <form noValidate>
                 <input placeholder="Navn" name="name" type="text" />
                     <p className="error-message"></p>
                 <input placeholder="Email" name="email" type="email" />
